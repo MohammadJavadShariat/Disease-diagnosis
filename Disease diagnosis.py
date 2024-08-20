@@ -3,61 +3,61 @@ health = 100
 
 #Examining the location of the pain
 while(True):
-    mahal_dard = input("محل درد را بنویسید(شکم , گلو , سینه , هیچکدام):")
-    if mahal_dard == "شکم" :
-        print("*****ویزیت پزشک*****\nآپاندیس شما آسیب دیده است! هرچه زودتر به بیمارستان مراجعه کنید.")
+    location_of_pain = input("Write the location of the pain (abdomen, throat, chest, none):")
+    if location_of_pain == "abdomen" :
+        print("*****Doctor's visit*****\nYour appendix is ​​damaged! Go to the hospital as soon as possible.")
         health -= 40
         break
-    elif mahal_dard == "گلو" :
+    elif location_of_pain == "throat" :
         #Checking whether or not you have a fever
         while(True):
-            tab = input("آیا تب دارید؟(بله , خیر):")
-            if tab == "بله" :
-                print("*****ویزیت پزشک*****\nدر گلوی شما باکتری گلودرد چرکی وجود دارد.")
+            fever = input("Do you have a fever? (Yes, No):")
+            if fever == "yes" :
+                print("*****Doctor's visit*****\nThere is pus sore throat bacteria in your throat.")
                 health -= 10
                 break
-            elif tab == "خیر" :
-                print("*****ویزیت پزشک*****\nبیماری شما ویروسی است.")
+            elif fever == "No" :
+                print("*****Doctor's visit*****\nYour illness is viral.")
                 health -= 15
                 break
             else:
-                print("داده غلط است.")
+                print("The data is incorrect.")
         break
-    elif mahal_dard == "سینه" :
-        print("*****ویزیت پزشک*****\nشما یک سکته ی ناموفق داشته اید. هرچه سریعتر به بیمارستان بروید.")
+    elif location_of_pain == "chest" :
+        print("*****Doctor's visit*****\nYou have had a failed stroke. Go to the hospital as soon as possible.")
         health -= 50
         break
-    elif mahal_dard == "هیچکدام" :
-        sorfe = input("(بله , خیر)آیا سرفه می کنید؟:")
+    elif location_of_pain == "none" :
+        cough = input("(Yes, No) Do you cough?:")
         #Check whether you have a cough or not
         while(True):
-            if sorfe == "خیر" :
-                print("*****ویزیت پزشک*****\nچرا وقتی مریضی ندارید مزاحم می شوید؟ شما به بیماری روانی مبتلا هستید. هرچه سریعتر خود را به یک آسایشگاه روانی معرفی کنید.")
+            if cough == "No" :
+                print("*****Doctor's visit*****\nWhy bother when you are not sick? You have a mental illness. Introduce yourself to a mental institution as soon as possible.")
                 health -= 90
                 break
-            elif sorfe == "بله" :
+            elif cough == "Yes" :
                 #Checking whether or not you have a fever
-                s_tab = input("آیا تب دارید؟(بله , خیر):") 
-                if s_tab == "خیر" :
-                    print("*****ویزیت پزشک*****\nشما سرما خورده اید.")
+                c_fever = input("Do you have a fever? (Yes, No):") 
+                if c_fever == "No" :
+                    print("*****Doctor's visit*****\nYou have a cold.")
                     health -= 20
                     break
-                elif s_tab == "بله" :
-                    print("*****ویزیت پزشک*****\nمتاسفانه شما به بیماری آنفولانزا مبتلا هستید.")
+                elif c_fever == "Yes" :
+                    print("*****Doctor's visit*****\nUnfortunately, you have the flu.")
                     health -= 25
                     break
                 else:
-                    print("داده غلط است.")
+                    print("The data is incorrect.")
         break
     else:
-        print("داده غلط است.")
+        print("The data is incorrect.")
 #Checking health percentage
 if health >= 80 :
-    print(f"سلامتی شما{health} درصد است.")
+    print(f"Your health is {health}%.")
 elif health <= 10 :
-    print(f"شما در وضعیت وخیم قرار دارید. متاسفانه سلامتی شما{health} درصد است.")
+    print(f"You are in critical condition. Unfortunately, your health is {health}%.")
 else:
-    print(f"متاسفانه سلامتی شما{health} درصد است.")                    
+    print(f"Unfortunately, your health is {health}%.")                    
             
             
             
